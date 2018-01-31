@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy import optimize
 
+#创建拟合前类
 class show_img():
 
     def __init__(self):
@@ -11,6 +12,7 @@ class show_img():
         self.pic = plt.figure()
         point = []
 
+    #画布中放置图片并添加点击事件
     def show(self,dir):
         img = plt.imread(dir)
         plt.imshow(img)
@@ -21,6 +23,7 @@ class show_img():
         return plt.show()
 
 
+    #OnClick事件触发记录点的位置
     def onClick(self,event):
         global ix, iy
         ix, iy = event.xdata, event.ydata
@@ -34,6 +37,7 @@ class show_img():
         return plt.show()
 
 
+#创建拟合后画布    
 class solution():
     def __init__(self,x,y,title):
         self.xarray = x
@@ -42,6 +46,7 @@ class solution():
         self.title = title
 
 
+    #重新描点画图
     def show(self,dir):
         img = plt.imread(dir)
         plt.imshow(img)
@@ -53,11 +58,11 @@ class solution():
         return plt.show()
 
 
-
+#二次函数拟合，可更改
 def f_2(x, A, B, C):
     return A*x*x + B*x + C
 
-
+#scipy拟合并返回拟合结果添加solution实例
 def figure():
     _x = []
     _y = []
