@@ -78,5 +78,3 @@ if __name__ == "__main__":
     show_img().show(dir)
     figure().show(dir)
 
-
-#r'C:\Users\Administrator\Desktop\222.jpg'
